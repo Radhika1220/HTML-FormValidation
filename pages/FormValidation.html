@@ -32,8 +32,8 @@
         </div>
         <div>
             <label for="number">Enter your PhoneNumber:</label>
-            <input type="number" id="number" name="number">
-            <error-output class="phoneNumberError" for="number"></error-output>
+            <input type="text" id="number" name="number">
+            <error-output class="phoneNumberError" for="text"></error-output>
         </div>
         <div>
             <label for="tel">Enter your TelPhoneNumber:</label>
@@ -57,6 +57,7 @@
         </div>
     </form>
     <script>
+        //UC1-->name validation
         const text = document.querySelector("#name");
         const textError = document.querySelector(".text-error");
         text.addEventListener('input', function () {
@@ -67,8 +68,45 @@
             else
                 textError.textContent = "Invalid Name"
         });
-
-        
+        //UC2-email validation
+        const textEmail = document.querySelector("#email");
+        const textErrorEmail = document.querySelector(".text-emailError");
+        email.addEventListener('input', function () {
+            let emailRegex = RegExp("(^[a-z]+)(([\. \+ \-]?[a-z A-Z 0-9])*)@(([0-9 a-z]+[\.]+[a-z]{3})+([\.]+[a-z]{2,3})?$)");
+            if (emailRegex.test(textEmail.value))
+                textErrorEmail.textContent = " ";
+            else
+                textErrorEmail.textContent = "Invalid EmailId"
+        });
+         //UC3-phone number validation
+         const phoneNum = document.querySelector("#number");
+        const errorPhoneNum = document.querySelector(".phoneNumberError");
+        text.addEventListener('input', function () {
+            let phoneNumRegex = RegExp('^[0-9]+\\s[0-9]{10}$');
+            if (phoneNumRegex.test(phoneNum.value))
+                errorPhoneNum.textContent = " ";
+            else
+                errorPhoneNum.textContent = "Invalid PhoneNumber"
+        });
+     
+        //UC4-->password validation
+        const password = document.querySelector("#pwd");
+        const errorPassword = document.querySelector(".text-passwordError");
+        password.addEventListener('input', function () 
+        {
+            let passwordRegex =  RegExp("(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?!.*[<>`])(?=[^.,:;'!@#$%^&*\\-_+=|(){}[?]*[.,:;'!@#$%^&*\\-_+=|(){}[?][^.,:;'!@#$%^&*\\-_+=|(){}[?]*$).{8,}$");
+            if (passwordRegex.test(password.value))
+                errorPassword.textContent = " ";
+            else
+                errorPassword.textContent = "Invalid Password"
+        });
+        //display salary using range
+        const salary = document.querySelector("#salary");
+      const output = document.querySelector(".salary-output");
+      output.textContent = salary.value;
+      salary.addEventListener("input", function () {
+        output.textContent = salary.value;
+      });
     </script>
 </body>
 
