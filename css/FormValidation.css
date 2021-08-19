@@ -35,7 +35,16 @@ label,input,button
     font-size: 15px;
     line-height: 2;
 }
-
+label
+{
+    text-align: right;
+    width:30%;
+    margin-right: 2%;
+}
+input
+{
+    flex:auto;
+}
 button{
     width:30%;
     margin:0 auto;
@@ -44,4 +53,5 @@ error-output
 {
     color:red;
     font-size:12px;
+
 }
