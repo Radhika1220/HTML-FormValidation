@@ -55,3 +55,12 @@ error-output
     font-size:12px;
 
 }
+
+/* using media queries */
+@media screen and (max-width: 600px) {
+    body {
+      background-color: olive;
+      color: white;
+    }
+  }
+
