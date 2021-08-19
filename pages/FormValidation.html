@@ -68,6 +68,16 @@
                 textError.textContent = "Invalid Name"
         });
 
+        const textEmail = document.querySelector("#email");
+        const textErrorEmail = document.querySelector(".text-emailError");
+        email.addEventListener('input', function () {
+            let emailRegex = RegExp("(^[a-z]+)(([\. \+ \-]?[a-z A-Z 0-9])*)@(([0-9 a-z]+[\.]+[a-z]{3})+([\.]+[a-z]{2,3})?$)");
+            if (emailRegex.test(textEmail.value))
+                textErrorEmail.textContent = " ";
+            else
+                textErrorEmail.textContent = "Invalid EmailId"
+        });
+
         
     </script>
 </body>
