@@ -81,7 +81,7 @@
          //UC3-phone number validation
          const phoneNum = document.querySelector("#number");
         const errorPhoneNum = document.querySelector(".phoneNumberError");
-        text.addEventListener('input', function () {
+       phoneNum.addEventListener('input', function () {
             let phoneNumRegex = RegExp('^[0-9]+\\s[0-9]{10}$');
             if (phoneNumRegex.test(phoneNum.value))
                 errorPhoneNum.textContent = " ";
